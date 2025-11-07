@@ -1,0 +1,107 @@
+@import "tailwindcss";
+
+@theme {
+
+  /* diagonal movement animation */
+  --animate-move-diagonal: move-diagonal 2s ease-out forwards;
+
+  @keyframes move-diagonal {
+    0%, 50% {
+      left: -210px; 
+      bottom : -200px;
+    }
+    100% {
+      /* transform: translate(0px, -50px); */
+      left: -90px; 
+      bottom: -100px;
+    }
+  }
+
+  /* rotate upper star */
+  --animate-rotate-scale-star: rotate-scale-star 2s ease-out forwards;
+
+  @keyframes rotate-scale-star {
+    0% {
+      left: -150px; 
+      bottom: 100px;
+      width: 40px;
+      height: 40px;
+      /* scale: 0.1; */
+      rotate: 0deg;
+    }
+    100% {
+      /* transform: translate(0px, -50px); */
+      left: -50px; 
+      bottom: 0px;
+      width: 100px;
+      height: 100px;
+      /* scale: 100%; */
+      rotate: 180deg;
+    }
+  }
+
+  /* translate up container */
+  --animate-translate-up: translate-up 4s ease-out forwards;
+
+  @keyframes translate-up {
+    0%, 60% {
+      transform: translateY(100px);
+      opacity: 1;
+    }
+    80% {
+      transform: translateY(0px);
+      opacity: 1;
+    }
+    100% {
+      opacity: 0;
+    }
+  }
+
+
+  /* opacity of text */
+  --animate-text-opacity: text-opacity 3s ease-out forwards;
+
+  @keyframes text-opacity {
+    0%, 60% {
+      opacity: 0;
+    }
+    100% {
+      opacity: 1;
+    }
+  }
+
+  --animate-fade-reveal-up: fade-reveal-up 1s ease-out forwards;
+
+  @keyframes fade-reveal-up {
+    0% {
+      opacity: 0;
+      clip-path: inset(100% 0 0 0); /* hidden from bottom */
+    }
+    100% {
+      opacity: 1;
+      clip-path: inset(0 0 0 0); /* fully visible */
+    }
+  }
+
+  --animate-replay-button-reveal: replay-button-reveal 5s ease-out forwards;
+
+  @keyframes replay-button-reveal {
+    0%, 80% {
+      opacity: 0;
+      clip-path: inset(100% 0 0 0); /* hidden from bottom */
+    }
+    100% {
+      opacity: 1;
+      clip-path: inset(0 0 0 0); /* fully visible */
+    }
+  }
+}
+
+#root {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 2rem;
+  text-align: center;
+}
+
+
